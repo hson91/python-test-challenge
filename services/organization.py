@@ -12,7 +12,7 @@ class Organization(Base):
 
     def load_data(self):
         self.data = read_file_json(Config.ORGANIZATION_DATA)
-        self.orgs_by_ids = self.get_orgs_by_id()
+        self.get_orgs_by_id()
     
     def get_orgs_by_id(self):
         orgs = {}
@@ -25,7 +25,8 @@ class Organization(Base):
 
             orgs[org["_id"]] = org    
         
-        return orgs
+        self.orgs_by_ids = orgs
+        return self.orgs_by_ids
     
     @property
     def fields(self):
