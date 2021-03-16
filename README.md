@@ -18,7 +18,7 @@
     python3 -m unittest -v test
 ```
 
-**Folder structure**
+## Folder structure
 ```text
 root
 ├── data ( JSON files provided data )
