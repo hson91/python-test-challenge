@@ -10,13 +10,23 @@ srv.load_data()
 break_line = "\n------------------------------------------------------------"
 
 def read_command(message="")->(str, bool):
+    """
+        Read data user input\n
+        Return true if user type 'quit' else return string command
+    """
+
     cmd = input(message).strip()
     if cmd == "quit":
         return "", True
 
     return cmd, False
 
-def handle_cmd(cmd)->bool:
+def choose_option(cmd)->bool:
+    """
+        if user choose option : \n
+        1: search data \n
+        2: seachable fields
+    """
     try:
         option = int(cmd)
         
@@ -107,7 +117,8 @@ def main():
         if is_quit :
             sys.exit()
         
-        if handle_cmd(cmd):
+        is_quit = choose_option(cmd)
+        if is_quit:
             sys.exit()
 
 if __name__ == "__main__":
