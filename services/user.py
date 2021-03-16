@@ -16,6 +16,10 @@ class User(Base):
         self.get_user_by_orgs()
     
     def get_user_by_orgs(self):
+        '''
+            convert user data to organization dict with key is 'organization_id' \n 
+            and user dict with key is '_id'
+        '''
         orgs = {}
         users = {}
         if len(self.data) == 0:

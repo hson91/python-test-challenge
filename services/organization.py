@@ -5,7 +5,7 @@ from utilities import read_file_json
 from .base import Base
 
 class Organization(Base):
-
+    
     def __init__(self):
         self.data = []
         self.orgs_by_ids = {}
@@ -15,6 +15,9 @@ class Organization(Base):
         self.get_orgs_by_id()
     
     def get_orgs_by_id(self):
+        '''
+            Convert organizations data to dict with key is '_id"
+        '''
         orgs = {}
         if len(self.data) == 0:
             return orgs
@@ -30,6 +33,9 @@ class Organization(Base):
     
     @property
     def fields(self):
+        '''
+            Get all key of organization object
+        '''
         if len(self.data) == 0:
             return []
         

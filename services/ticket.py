@@ -17,7 +17,10 @@ class Ticket(Base):
         self.get_user_and_organization()
 
     def get_user_and_organization(self):
-        
+        '''
+            Convert tickes data to user dict with key is 'assignee_id" and 'submitter_id' \n
+            and convert organizations dict with key is 'organization_id'
+        '''
         if len(self.data) == 0:
             return
         
