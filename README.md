@@ -20,7 +20,7 @@
 
 ## Folder structure
 ```text
-root
+python-test-challenge
 ├── data ( JSON files provided data )
 ├── services ( Data layers which are responsible for searching )
 ├── utilities (Helper functions )
